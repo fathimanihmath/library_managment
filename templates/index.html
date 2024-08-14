@@ -1,0 +1,152 @@
+{% extends 'layouts/main.html' %}
+{% block body %}
+{% load static %}
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <h1>Best Books</h1>
+                        <p>Explore The Fascinating World Of Books!</p>
+                            <p>There is more treasure in books than in all the pirates loot on treasure island</p>
+                        <a href="{% url 'collections' %}" class="btn_1">shop now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner_img">
+        <img src="/static/images/book1.jpg" alt="#" class="img-fluid">
+        
+    </div>
+</section>
+<section class="single_product_list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single_product_iner">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="single_product_img">
+                                <img src="/static/images/img/single_product_1.jpg" class="img-fluid" alt="#">
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                            <div class="single_product_content">
+                                <h5>Started from $10</h5>
+                                <h2> <a href="{% url 'collections' %}"> 
+                                    Wide varieties of 
+                                    fiction stories</a> </h2>
+                                <a href="{% url 'collections' %}" class="btn_3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single_product_iner">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="static/single_product_img">
+                                <img src="/static/images/img/single_product_2.jpg" class="img-fluid" alt="#">
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                            <div class="single_product_content">
+                                <h5>Started from $10</h5>
+                                <h2> <a href="{% url 'collections' %}">Explore the 
+                                    world of comics 
+                                    </a> </h2>
+                                <a href="{% url 'collections' %}" class="btn_3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single_product_iner">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="single_product_img">
+                                <img src="static/images/img/single_product_3.jpg" class="img-fluid" alt="#">
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-6">
+                            <div class="single_product_content">
+                                <h5>Started from $10</h5>
+                                <h2> <a href="{% url 'collections' %}">From class 1 to 12
+                                        Acadamic books and guides are
+                                        available</a> </h2>
+                                <a href="{% url 'collections' %}" class="btn_3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- product list end-->
+
+
+<!-- trending item start-->
+<section class="trending_items">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_tittle text-center">
+                    <h2>Trending Books</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <div class="single_product_item_thumb">
+                        <img src="static/images/img/tranding_item/trending_item_1.jpg" alt="#" class="img-fluid">
+                    </div>
+                    <h3> <a href="{% url 'collections' %}">The 5 AM Club 
+                        by Robin Sharma </a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <img src="static/images/img/tranding_item/trending_item_2.jpg" alt="#" class="img-fluid">
+                    <h3> <a href="{% url 'collections' %}">World's Greatest Sports Stars: Biographies of Inspirational Personalities For Kids </a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <img src="static/images/img/tranding_item/trending_item_3.jpg" alt="#" class="img-fluid">
+                    <h3> <a href="{% url 'collections' %}">The Complete Novel of Sherlock Holmes </a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <img src="static/images/img/tranding_item/trending_item_4.jpg" alt="#" class="img-fluid">
+                    <h3> <a href="{% url 'collections' %}">Abraham Lincoln : A Complete Biography</a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <img src="static/images/img/tranding_item/trending_item_5.jpg" alt="#" class="img-fluid">
+                    <h3> <a href="{% url 'collections' %}">Ghosts of The Silent Hills: Stories based on true hauntings</a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_product_item">
+                    <img src="static/images/img/tranding_item/trending_item_6.jpg" alt="#" class="img-fluid">
+                    <h3> <a href="{% url 'collections' %}">Anthem (Hardcover Library Edition)
+                        by Ayn Rand </a> </h3>
+                    <p>From $5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

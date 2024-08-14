@@ -1,0 +1,60 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+	
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('/static/images/book.jpg');">
+			<div class="inner">
+				<form  class="register "action="#" method="post">
+                    {% csrf_token %}
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">Name</label>
+							<input type="text" placeholder="Enter Username" name="username" id="username" required>
+							
+						</div>
+						
+					
+					<div class="form-wrapper">
+						<label for="">Email</label>
+						<input type="text" placeholder="Email" name="email" id="email" required>
+						
+					</div>
+					<div class="form-wrapper">
+						<label for="">Password</label>
+						<input type="password" placeholder="Enter Password" name="psw1" id="psw" required>
+						
+					</div>
+					
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button>Register Now</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+
+{% for messages in messages %}
+<h3 style="color: brown;">{{messages}}</h3>
+{% endfor %}
+
+{% endblock body %}
+</body>
+</html>
+
+
+<!-- end document-->

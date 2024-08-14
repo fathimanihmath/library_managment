@@ -1,0 +1,150 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <section class="breadcrumb_part">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="breadcrumb_iner">
+                      <h2>Cart List</h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+       
+
+        .cart-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .cart-item img {
+            max-width: 80px;
+            margin-right: 10px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: #888;
+        }
+
+        .cart-item-quantity {
+            margin-top: 5px;
+        }
+
+        .cart-total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .checkout-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="cart-container">
+        {% for cart_item in cart_items %}
+        <div class="cart-item">
+            <img src="{{ cart_item.product.image.url }}"/>
+            <div class="cart-item-details">
+                <form method="post" action="{% url 'update_cart_quantity' cart_item.id %}">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ cart_item.quantity }}" min="1">
+                    <button type="submit">Update Quantity</button>
+                </form>
+                <form method="post" action="{% url 'remove_cart_item' cart_item.id %}">
+
+                    {% csrf_token %}
+                    <button type="submit">Remove Item</button>
+                </form>
+                <div class="cart-item-title">{{ cart_item.product.name }}</div>
+                <div class="cart-item-price">Price: ₹ {{ cart_item.product.price }}</div>
+                <div class="cart-item-quantity">Quantity: {{ cart_item.quantity }}</div>
+                <div class="cart-item-subtotal">Subtotal: ₹ {{ cart_item.subtotal }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    
+        <div class="cart-total">
+            {% if cart_items %}
+                <p>Total Price: ₹ {{ total_price }}</p>
+
+                <!-- cart.html -->
+
+<!-- cart.html -->
+
+
+
+
+
+
+
+
+                <form action="/checkout">
+                    <button class="checkout-btn" type="submit">Checkout</button>
+                </form>
+            {% else %}
+            <form action="{%url 'home'%}">
+                <p><h3>Your cart is empty.</h3></p>
+                <button class="checkout-btn" type="submit">Continue Shopping</button>
+            </form>
+               
+            {% endif %}
+        </div>
+    
+       
+    </div>
+
+    </div>
+
+</body>
+</html>
+
+              
+{% endblock body %}
